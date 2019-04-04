@@ -11,7 +11,7 @@ typedef struct maboyinfo{
 
     int dir;
     int nsteps;
-}maboy;
+} maboy;
 
 maboy* initrat(int _bsize);
 int** initboard(int _bsize, maboy* _rat);
@@ -31,18 +31,18 @@ maboy* initrat(int _bsize){
     return(_rat);
 }
 
-int** initboard(int _bsize, maboy* _rat){
+int** initboard(int _bsize, maboy* _rat) {
     
     int i, a;
     int** b = (int**)malloc(_bsize * sizeof(int*));
 
-    for(i=0; i<_bsize; i++){
+    for(i = 0; i < _bsize; i++) {
        b[i] = (int*)malloc(_bsize * sizeof(int));
     }
 
-   for(i=0; i<_bsize; i++){
-        for(a=0; a<_bsize; a++){
-            if(i==_rat->x_cur && a==_rat->y_cur){
+   for(i = 0; i < _bsize; i++) {
+        for(a=0; a<_bsize; a++) {
+            if(i==_rat->x_cur && a==_rat->y_cur) {
                 b[i][a]=8;
             }
             else if(i==0 || i==_bsize-1 || a==0 || a==_bsize-1){
